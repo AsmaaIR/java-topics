@@ -96,7 +96,7 @@ for (dataType element : arrayName) {
   ```
   This will create a variable in the stack and has value null by default.
 
-  <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Array-1.png" width="400" />
+  <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Array-1.png" width="500" />
 
 Ok, But Now what happen when we allocate memory:
 ```
@@ -105,14 +105,14 @@ Ok, But Now what happen when we allocate memory:
  This will allocate memory for 5 integers, Each one has its own address.
 As we said above these allocated memory units are contiguous, hence they will be spaced out by the same distance. 
 
-  <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Arrays-2.png" width="400" />
+  <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Arrays-2.png" width="500" />
 
 Now, what will happen if we store values by index.
 ```
 nums[0] = 50;   // 0*4 = 0 => 0+4000 = 4000
 num[4] = 60;  // 4*4 = 16 => 16+4000 = 4016
 ```
-  <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Arrays-3.png" width="400" />
+  <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Arrays-3.png" width="500" />
 
 #### Efficiency: 
   - Arrays provide efficient element access because the elements are stored contiguously in memory. 
@@ -133,7 +133,7 @@ collections refer to a framework that provides a set of classes and interfaces t
 - The List interface represents an ordered collection of elements that allows duplicates.
 - The List interface extends the Collection interface and adds methods to manipulate and access elements based on their index.
 - Key features include ordered collection, allowing duplicates, and dynamic size changes.
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/list.png?raw=true" width="450" />
+  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/list.png?raw=true" width="400" />
 
 
 #### ArrayList:
@@ -150,7 +150,7 @@ in Java 8: to save memory consumption and avoid immediate memory allocation make
 ArrayList<Integers> grades = new ArrayList<>();<br>
 grades.add(90);<br>
  
- <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist-1.png" width="600" />
+ <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist-1.png" width="700" />
 
 -now we will add another 9 elements:
 ```
@@ -158,13 +158,13 @@ for (int i=1; i<10; i++) {
    grades.add(i+10);
  }
 ```
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist-2.png" width="600" />
+  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist-2.png" width="700" />
 
 What happens when you want to add the 11th element? How does ArrayList become resizable?
 ```
 grades.add(10, 100);<br>
 ```
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist--3.png" width="600" />
+  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist--3.png" width="700" />
 
 ```
        ArrayList<String> languages = new ArrayList<>();
@@ -207,7 +207,7 @@ The efficiency of common ArrayList operations:<br>
 #### LinkedList:
 
 The LinkedList class provides the functionality of the linked list data structure (use a doubly linked list to store the elements).
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-1.png" width="600" />
+  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-1.png" width="700" />
 
 * contain duplicate elements.
 * maintains insertion order.
@@ -220,11 +220,11 @@ The LinkedList class provides the functionality of the linked list data structur
 - Next - stores an address of the next element in the list. It is null for the last element.
 - Data - stores the actual data.
 
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-2.png" width="600" />
+  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-2.png" width="700" />
 
 When we remove Data1:
 The Next pointer of data will be pointed to data2 Address and the prev pointer of data 2 will point address to Data.
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-3.png" width="600" />
+  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-3.png" width="700" />
 
 - Queue(FIFO) First Input First output:
   Enqueue - > add element to the end of the list.
@@ -364,7 +364,7 @@ Set contains unique elements only.
 -HashSet has default initial capacity of 16.
 -HashSet has default load factor of 0.75 or 75%.
 
- <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/set-2.png" width="600" />
+ <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/set-2.png" width="700" />
 
 ### LinkedHashSet:
 - provides functionalities of both the hashtable and the linked list data structure.
