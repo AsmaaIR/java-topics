@@ -55,7 +55,7 @@ This method becomes cumbersome, impractical and error-prone when dealing with a 
 ```
 
 3- Length:<br>
-    - Every array has a length property, which represents the number of elements it can store. You can retrieve the length using arrayName.length: <br>
+ - Every array has a length property, which represents the number of elements it can store. You can retrieve the length using arrayName.length: <br>
 ```     
    int size = numbers.length; // Retrieves the size of the 'numbers' array
 ```
@@ -89,7 +89,7 @@ for (dataType element : arrayName) {
         System.out.println(nums[2]);
 ```
 
-##### Arrays - Memory Management:
+#### Arrays - Memory Management:
 - The elements in an array are stored in contiguous memory locations, making it efficient for accessing and manipulating elements.
 - This means that each element of the array is stored in a contiguous block of memory, with the first element stored at the lowest memory address and the last element stored at the highest memory 
     address.
@@ -125,17 +125,17 @@ num[4] = 60;  // 4*4 = 16 => 16+4000 = 4016
 - Accessing an element at a specific index is a constant-time operation (O(1)).
 
 However, insertion and deletion of elements might be less efficient, especially if done frequently, as it requires shifting the elements in the array.
-- **Inserting Elements at the End: O(1)**
-    - **Explanation:** If there is space at the end of the array, appending an element is a constant-time operation.
+- Inserting Elements at the End: O(1)
+    - Explanation: If there is space at the end of the array, appending an element is a constant-time operation.
 
-- **Inserting Elements at the Beginning or Middle: O(n)**
-    - **Explanation:** Inserting an element at the beginning or in the middle of an array requires shifting all subsequent elements one position to the right, which takes linear time.
+- Inserting Elements at the Beginning or Middle: O(n)
+    - Explanation: Inserting an element at the beginning or in the middle of an array requires shifting all subsequent elements one position to the right, which takes linear time.
 
 Arrays are best suited for scenarios where:</br>
-- **The number of elements is fixed or known in advance**
-- **Fast, direct access to elements is required**
-- **Memory efficiency is a priority**
-- **Data structure complexity is minimal**
+- The number of elements is fixed or known in advance
+- Fast, direct access to elements is required
+- Memory efficiency is a priority
+- Data structure complexity is minimal
 
 ##### Note*: keep in mind that their fixed size might limit their flexibility in certain situations.
 
