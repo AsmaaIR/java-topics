@@ -4,19 +4,21 @@ Before the concept of arrays was introduced, there was no straightforward way to
 Programmers used other data structures or manual techniques to store multiple elements.</br>
 EX: used complex technique like pointers to link data items together, which was difficult and error-prone.</br>
 
--Most common approach using separate variables: Programmers would declare individual variables for each element they wanted to store.</br>
-For example, if they wanted to store five integers, they would create five variables like this:</br>
+ - Most common approach using separate variables: Programmers would declare individual variables for each element they wanted to store.</br>
+
+ For example, if they wanted to store five integers, they would create five variables like this:</br>
 
 ```
-  int num1 = 10;
-  int num2 = 20;
-  int num3 = 30;
-  int num4 = 40;
-  int num5 = 50;
+      int num1 = 10;
+      int num2 = 20;
+      int num3 = 30;
+      int num4 = 40;
+      int num5 = 50;
 ```
 This method becomes cumbersome, impractical and error-prone when dealing with a large number of elements.</br>
 
-### Arrays:
+
+## Arrays:
 * An array is a container object that holds a fixed number of values of a single type. 
 * The length of an array is established when the array is created.
 * After creation, its length is fixed.
@@ -25,7 +27,7 @@ This method becomes cumbersome, impractical and error-prone when dealing with a 
 
   <img src="https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif" width="600" />
 
-##### About arrays:
+#### About arrays:
 1-Declaration and Initialization: 
  - To create an array, you first declare its type and then initialize it.
  - The syntax for declaring an array is:<br>
@@ -39,9 +41,9 @@ This method becomes cumbersome, impractical and error-prone when dealing with a 
    numbers = new int[9]; // Creates an array of size 9 to store integers.
 ```
  - You can initialize an array with values at the time of declaration, using curly braces:
-   ```
+```
      Int[ ] numbers = {10, 20, 30, 40, 50};
-   ```
+```
 
 2- Indexing:
  - Array elements are accessed using zero-based indexing.
@@ -118,26 +120,26 @@ num[4] = 60;  // 4*4 = 16 => 16+4000 = 4016
 ```
   <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Arrays-3.png" width="500" />
 
-#### Efficiency: 
-  - Arrays provide efficient element access because the elements are stored contiguously in memory. 
-  - accessing an element at a specific index is a constant-time operation (O(1)).
+### Efficiency
+- Arrays provide efficient element access because the elements are stored contiguously in memory.
+- Accessing an element at a specific index is a constant-time operation (O(1)).
 
- However, insertion and deletion of elements might be less efficient, especially if done frequently, as it requires shifting the elements in the array.</br>
- Inserting Elements at the End: O(1) </br>
- Explanation: If there is space at the end of the array, appending an element is a constant-time operation. </br>
- but at the beginning or middle: O(n) </br>
- Explanation: Inserting an element at the beginning or in the middle of an array requires shifting all subsequent elements one position to the right, which takes linear time.</br>
- </br>
- </br>
+However, insertion and deletion of elements might be less efficient, especially if done frequently, as it requires shifting the elements in the array.
+- **Inserting Elements at the End: O(1)**
+    - **Explanation:** If there is space at the end of the array, appending an element is a constant-time operation.
+
+- **Inserting Elements at the Beginning or Middle: O(n)**
+    - **Explanation:** Inserting an element at the beginning or in the middle of an array requires shifting all subsequent elements one position to the right, which takes linear time.
+
 Arrays are best suited for scenarios where:</br>
-    -The number of elements is fixed or known in advance.</br>
-    -Fast, direct access to elements is required.</br>
-    -Memory efficiency is a priority.</br>
-    -Data structure complexity is minimal.</br>
+- **The number of elements is fixed or known in advance**
+- **Fast, direct access to elements is required**
+- **Memory efficiency is a priority**
+- **Data structure complexity is minimal**
 
 ##### Note*: keep in mind that their fixed size might limit their flexibility in certain situations.
 
-##### - Is there something that offers more flexibility?!
+#### -Is there something that offers more flexibility?!
 ------------------------------------------------------------------------------------
 ## Collections:
 collections refer to a framework that provides a set of classes and interfaces to store, manage, and manipulate groups of objects. The Java Collections Framework includes various data structures, such as lists, sets, maps, queues, and more. These collections efficiently store, retrieve, and process data, making it easier to work with aggregate data and perform common operations like searching, sorting, and iteration.
@@ -181,6 +183,15 @@ What happens when you want to add the 11th element? How does ArrayList become re
 grades.add(10, 100);<br>
 ```
   <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist--3.png" width="700" />
+
+When you try to add a new element to an ArrayList in Java that has reached its default capacity of 10, the ArrayList will automatically resize itself to accommodate the new element. </br>
+Here's how it works:</br>
+    -Check Capacity: The ArrayList checks if there is enough capacity to add the new element.</br>
+    -Resize: If the current capacity is insufficient (which it is, in this case), the ArrayList will increase its capacity.</br>
+    -Copy Elements: A new array with the increased capacity is created, and all the elements from the old array are copied into the new array.</br>
+    -Add Element: The new element is added to the resized array.</br>
+
+The default behavior for resizing an ArrayList is to increase the capacity by 50%. So, if the current capacity is 10, the new capacity will be 15.</br>
 
 ```
        ArrayList<String> languages = new ArrayList<>();
@@ -335,11 +346,82 @@ The Next pointer of data will be pointed to data2 Address and the prev pointer o
   
 - Deletion: Deleting an element from the LinkedList, like adding one, is fastest when deleting from the list’s front or end. However, deletion is slower when removing an arbitrary element.
 
+# ArrayList vs LinkedList
+
+## Retrieval
+
+### ArrayList
+- **Time Complexity**: O(1)
+- **Explanation**: Retrieval is constant time because of direct access via array indexing.
+
+### LinkedList
+- **Time Complexity**: O(n)
+- **Explanation**: Retrieval is linear time because it requires sequential traversal of nodes.
+
+## Addition
+
+### Adding Elements at the End
+
+#### ArrayList
+- **Average Time Complexity**: O(1)
+- **Explanation**: Adding an element to the end of an `ArrayList` is generally very fast because it typically involves placing the element in the next available slot in the underlying array.
+    - However, if the array is full and needs to be resized (which involves allocating a new array and copying elements), the time complexity for that specific operation can be O(n).
+    - On average, considering occasional resizing, the complexity is O(1).
+
+#### LinkedList
+- **Time Complexity**: O(1)
+- **Explanation**: Adding an element at the end of a `LinkedList` involves creating a new node and adjusting the pointers of the new node and the current tail node.
+    - This operation is constant time, O(1), because the `LinkedList` maintains a reference to the tail node.
+
+### Adding an Element at a Specific Position
+
+#### ArrayList
+- **Time Complexity**: O(n)
+- **Explanation**: Inserting an element at a specific position requires shifting all elements from the specified index onward one position to the right to make space for the new element.
+    - The time complexity of this shifting operation is O(n) in the worst case, where n is the number of elements in the `ArrayList`.
+    - If the underlying array is full and needs resizing, the cost of resizing is added to the insertion time.
+
+#### LinkedList
+- **Time Complexity**: O(n)
+  - **Explanation**: To insert an element at a specific position, the list must be traversed to reach the desired index.
+      - Once the position is found, the operation involves creating a new node and updating the pointers of the adjacent nodes.
+      - The traversal requires O(n) time in the worst case, where n is the number of elements in the `LinkedList`. The insertion itself is O(1) once the correct position is reached.
+
+### Adding an Element at the Beginning
+
+#### ArrayList
+- **Time Complexity**: O(n)
+- **Explanation**: Adding an element at the beginning of an `ArrayList` requires shifting all existing elements one position to the right to make space for the new element.
+    - This operation involves moving n elements, resulting in a time complexity of O(n).
+
+#### LinkedList
+- **Time Complexity**: O(1)
+- **Explanation**: Adding an element at the beginning of a `LinkedList` involves creating a new node and adjusting the pointers of the new node and the current head node.
+    - This operation is constant time, O(1), because it only involves updating a few pointers.
+
+## Deletion
+
+#### ArrayList
+- **Time Complexity**: O(n)
+- **Explanation**:
+    - *Middle/Beginning Deletion*: When deleting an element from the middle or beginning of an `ArrayList`, all subsequent elements need to be shifted one position to the left to fill the gap left by the removed element. This results in a time complexity of O(n) in the worst case, where n is the number of elements in the list.
+    - *End Deletion*: Deleting an element from the end of an `ArrayList` is O(1) because no shifting is required. However, this scenario is less common in applications where deletions are spread throughout the list.
+
+### LinkedList
+- **Time Complexity**: 
+    - *O(1)* for deletions at the beginning or end.
+    - *O(n)* for deletions at arbitrary positions.
+
+- **Explanation**:
+    - *Beginning Deletion*: Deleting an element from the beginning of a `LinkedList` is very efficient, as it only involves updating the head pointer to the next node. This is a constant-time operation, O(1).
+    - *End Deletion*: Deleting an element from the end of a `LinkedList` is also efficient because the `LinkedList` maintains a reference to the tail node. The operation involves updating the tail pointer to the previous node, which is O(1).
+    - *Arbitrary Position Deletion*: Deleting an element from an arbitrary position requires traversing the list to find the element, which takes O(n) time in the worst case. Once the element is found, updating the pointers to bypass the removed node is O(1), but the traversal dominates the overall time complexity, making it O(n).
+
 ###### use cases for ArrayLists and LinkedLists:
 - ArrayLists are best for cases where you will be retrieving elements (that is, reading from the array) more frequently than modifying the array.
 - LinkedLists are best for cases where you will be modifying the list often, especially at the front or end of the list.
 
-
+                                 ---------------------------------------------------------
 ### Set: 
 Set contains unique elements only.
  
