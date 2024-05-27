@@ -346,19 +346,19 @@ The Next pointer of data will be pointed to data2 Address and the prev pointer o
   
 - Deletion: Deleting an element from the LinkedList, like adding one, is fastest when deleting from the list’s front or end. However, deletion is slower when removing an arbitrary element.
 
-# ArrayList vs LinkedList
+## ArrayList vs LinkedList
 
-## Retrieval
+### Retrieval
 
-### ArrayList
+#### ArrayList
 - **Time Complexity**: O(1)
 - **Explanation**: Retrieval is constant time because of direct access via array indexing.
 
-### LinkedList
+#### LinkedList
 - **Time Complexity**: O(n)
 - **Explanation**: Retrieval is linear time because it requires sequential traversal of nodes.
 
-## Addition
+### Addition
 
 ### Adding Elements at the End
 
@@ -399,7 +399,7 @@ The Next pointer of data will be pointed to data2 Address and the prev pointer o
 - **Explanation**: Adding an element at the beginning of a `LinkedList` involves creating a new node and adjusting the pointers of the new node and the current head node.
     - This operation is constant time, O(1), because it only involves updating a few pointers.
 
-## Deletion
+### Deletion
 
 #### ArrayList
 - **Time Complexity**: O(n)
@@ -407,7 +407,7 @@ The Next pointer of data will be pointed to data2 Address and the prev pointer o
     - *Middle/Beginning Deletion*: When deleting an element from the middle or beginning of an `ArrayList`, all subsequent elements need to be shifted one position to the left to fill the gap left by the removed element. This results in a time complexity of O(n) in the worst case, where n is the number of elements in the list.
     - *End Deletion*: Deleting an element from the end of an `ArrayList` is O(1) because no shifting is required. However, this scenario is less common in applications where deletions are spread throughout the list.
 
-### LinkedList
+#### LinkedList
 - **Time Complexity**: 
     - *O(1)* for deletions at the beginning or end.
     - *O(n)* for deletions at arbitrary positions.
@@ -421,7 +421,7 @@ The Next pointer of data will be pointed to data2 Address and the prev pointer o
 - ArrayLists are best for cases where you will be retrieving elements (that is, reading from the array) more frequently than modifying the array.
 - LinkedLists are best for cases where you will be modifying the list often, especially at the front or end of the list.
 
-                                 ---------------------------------------------------------
+---------------------------------------------------------
 ### Set: 
 Set contains unique elements only.
  
