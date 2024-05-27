@@ -346,73 +346,68 @@ The Next pointer of data will be pointed to data2 Address and the prev pointer o
   
 - Deletion: Deleting an element from the LinkedList, like adding one, is fastest when deleting from the list’s front or end. However, deletion is slower when removing an arbitrary element.
 
-## ArrayList vs LinkedList
+### ArrayList vs LinkedList
 
-### Retrieval
+#### Retrieval:
+- ArrayList
+  - *Time Complexity*: O(1)
+  - *Explanation*: Retrieval is constant time because of direct access via array indexing.
 
-#### ArrayList
-- **Time Complexity**: O(1)
-- **Explanation**: Retrieval is constant time because of direct access via array indexing.
+- LinkedList
+  - *Time Complexity*: O(n)
+  - *Explanation*: Retrieval is linear time because it requires sequential traversal of nodes.
 
-#### LinkedList
-- **Time Complexity**: O(n)
-- **Explanation**: Retrieval is linear time because it requires sequential traversal of nodes.
-
-### Addition
-
-### Adding Elements at the End
-
-#### ArrayList
-- **Average Time Complexity**: O(1)
-- **Explanation**: Adding an element to the end of an `ArrayList` is generally very fast because it typically involves placing the element in the next available slot in the underlying array.
+#### Addition:
+##### Adding Elements at the End:
+- ArrayList
+  - *Average Time Complexity*: O(1)
+  - *Explanation*: Adding an element to the end of an `ArrayList` is generally very fast because it typically involves placing the element in the   next available slot in the underlying array.
     - However, if the array is full and needs to be resized (which involves allocating a new array and copying elements), the time complexity for that specific operation can be O(n).
     - On average, considering occasional resizing, the complexity is O(1).
 
-#### LinkedList
-- **Time Complexity**: O(1)
-- **Explanation**: Adding an element at the end of a `LinkedList` involves creating a new node and adjusting the pointers of the new node and the current tail node.
+- LinkedList
+  - *Time Complexity*: O(1)
+  - *Explanation*: Adding an element at the end of a `LinkedList` involves creating a new node and adjusting the pointers of the new node and the current tail node.
     - This operation is constant time, O(1), because the `LinkedList` maintains a reference to the tail node.
 
-### Adding an Element at a Specific Position
-
-#### ArrayList
-- **Time Complexity**: O(n)
-- **Explanation**: Inserting an element at a specific position requires shifting all elements from the specified index onward one position to the right to make space for the new element.
+##### Adding an Element at a Specific Position:
+- ArrayList
+  - *Time Complexity*: O(n)
+  - *Explanation*: Inserting an element at a specific position requires shifting all elements from the specified index onward one position to the right to make space for the new element.
     - The time complexity of this shifting operation is O(n) in the worst case, where n is the number of elements in the `ArrayList`.
     - If the underlying array is full and needs resizing, the cost of resizing is added to the insertion time.
 
-#### LinkedList
-- **Time Complexity**: O(n)
-  - **Explanation**: To insert an element at a specific position, the list must be traversed to reach the desired index.
+- LinkedList
+  - *Time Complexity*: O(n)
+  - *Explanation*: To insert an element at a specific position, the list must be traversed to reach the desired index.
       - Once the position is found, the operation involves creating a new node and updating the pointers of the adjacent nodes.
       - The traversal requires O(n) time in the worst case, where n is the number of elements in the `LinkedList`. The insertion itself is O(1) once the correct position is reached.
 
-### Adding an Element at the Beginning
-
-#### ArrayList
-- **Time Complexity**: O(n)
-- **Explanation**: Adding an element at the beginning of an `ArrayList` requires shifting all existing elements one position to the right to make space for the new element.
+##### Adding an Element at the Beginning:
+- ArrayList
+  - *Time Complexity*: O(n)
+  - *Explanation*: Adding an element at the beginning of an `ArrayList` requires shifting all existing elements one position to the right to make space for the new element.
     - This operation involves moving n elements, resulting in a time complexity of O(n).
 
-#### LinkedList
-- **Time Complexity**: O(1)
-- **Explanation**: Adding an element at the beginning of a `LinkedList` involves creating a new node and adjusting the pointers of the new node and the current head node.
+- LinkedList
+  - *Time Complexity*: O(1)
+  - *Explanation*: Adding an element at the beginning of a `LinkedList` involves creating a new node and adjusting the pointers of the new node and 
+the current head node.
     - This operation is constant time, O(1), because it only involves updating a few pointers.
 
-### Deletion
-
-#### ArrayList
-- **Time Complexity**: O(n)
-- **Explanation**:
+#### Deletion:
+- ArrayList
+  - *Time Complexity*: O(n)
+  - *Explanation*:
     - *Middle/Beginning Deletion*: When deleting an element from the middle or beginning of an `ArrayList`, all subsequent elements need to be shifted one position to the left to fill the gap left by the removed element. This results in a time complexity of O(n) in the worst case, where n is the number of elements in the list.
     - *End Deletion*: Deleting an element from the end of an `ArrayList` is O(1) because no shifting is required. However, this scenario is less common in applications where deletions are spread throughout the list.
 
-#### LinkedList
-- **Time Complexity**: 
+- LinkedList
+  - *Time Complexity*: 
     - *O(1)* for deletions at the beginning or end.
     - *O(n)* for deletions at arbitrary positions.
 
-- **Explanation**:
+  - *Explanation*:
     - *Beginning Deletion*: Deleting an element from the beginning of a `LinkedList` is very efficient, as it only involves updating the head pointer to the next node. This is a constant-time operation, O(1).
     - *End Deletion*: Deleting an element from the end of a `LinkedList` is also efficient because the `LinkedList` maintains a reference to the tail node. The operation involves updating the tail pointer to the previous node, which is O(1).
     - *Arbitrary Position Deletion*: Deleting an element from an arbitrary position requires traversing the list to find the element, which takes O(n) time in the worst case. Once the element is found, updating the pointers to bypass the removed node is O(1), but the traversal dominates the overall time complexity, making it O(n).
