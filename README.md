@@ -459,6 +459,24 @@ Set contains unique elements only.
 
  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/set-2.png" width="700" />
 
+###### HashSet Efficiency:
+- The efficiency of a `HashSet` in Java is primarily determined by its underlying implementation, which is based on a `HashMap`.
+
+- Add (Insert) Operation:
+    - *Average Case*: `O(1)`
+    - *Worst Case*: `O(n)`
+    - *Explanation*: In the average case, the time complexity is constant `O(1)` due to the efficient hashing mechanism. However, in the worst case, when many elements hash to the same bucket, it can degrade to `O(n)`.
+
+- Remove Operation
+    - *Average Case*: `O(1)`
+    - *Worst Case*: `O(n)`
+    - *Explanation*: Similar to the add operation, removing an element generally takes constant time `O(1)`. In the worst case, it can take `O(n)` time if there are many hash collisions.
+
+- Contains (Search) Operation
+    - *Average Case*: `O(1)`
+    - *Worst Case*: `O(n)`
+    - *Explanation*: Checking if an element is in the set usually takes constant time `O(1)` due to the hash table's efficiency. In the worst case, if many elements collide in the same bucket, it can degrade to `O(n)`.
+
 ### LinkedHashSet:
 - provides functionalities of both the hashtable and the linked list data structure.
 - Elements are stored in hash tables like HashSet.
@@ -491,6 +509,8 @@ Nevertheless, if you require a set with preserved insertion order and efficient 
         languages.add("JavaScript");
         System.out.println("LinkedHashSet: " + languages);
 ```
+   - A LinkedHashSet is ideal when you need a collection that maintains insertion order without duplicates.
+   - It combines the advantages of a hash table (fast lookups) with a linked list (maintaining order).
 
 ### TreeSet:
 - The object of the treeSet Class are sorted in ascending order.
