@@ -657,8 +657,10 @@ Nevertheless, if you require a set with preserved insertion order and efficient 
 - You are building a movie recommendation system. How would you store the movie data and user preferences using Java Collections? How would you efficiently retrieve and suggest movie recommendations 
    based on a user's previous choices?
 
+- You are implementing a caching mechanism where each cached item must be unique and in the order of its insertion. Which Java collection would you use, and what advantages does it offer for this use case?
 
+- You need to store user session data where each user has a unique session ID, and you need quick retrieval by session ID. Which Java collection would you use, and what advantages does it offer for this use case?
 
+- You need to maintain a list of user comments on a blog post where duplicates are allowed and the order of insertion is preserved. Which Java collection would you use and why?
 
-
-
+- You need to implement a task scheduler where tasks are executed based on their priority. Which Java collection would you use, and what advantages does it offer for this scenario?
