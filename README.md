@@ -32,8 +32,8 @@ This method becomes cumbersome, impractical and error-prone when dealing with a 
  - To create an array, you first declare its type and then initialize it.
  - The syntax for declaring an array is:<br>
  ```
-       dataType[ ] arrayName; <br>
-       Ex: int [ ] numbers; <br>
+       dataType[ ] arrayName;
+       Ex: int [ ] numbers;
 ```
  - Initialize the array with a specific size, you use the new keyword:<br>
 
@@ -98,7 +98,7 @@ for (dataType element : arrayName) {
 
   As we said before the memory is managed two areas (Stack , Heap)<br>
   ```
-  Int [] nums;
+  int [] nums;
   ```
   This will create a variable in the stack and has value null by default.
 
@@ -115,6 +115,8 @@ As we said above these allocated memory units are contiguous, hence they will be
 
 Now, what will happen if we store values by index.
 ```
+MemoryAddressOfElement = BaseAddress + (Index*SizeOfElement)
+
 nums[0] = 50;   // 0*4 = 0 => 0+4000 = 4000
 num[4] = 60;  // 4*4 = 16 => 16+4000 = 4016
 ```
@@ -151,6 +153,7 @@ collections refer to a framework that provides a set of classes and interfaces t
 - The List interface represents an ordered collection of elements that allows duplicates.
 - The List interface extends the Collection interface and adds methods to manipulate and access elements based on their index.
 - Key features include ordered collection, allowing duplicates, and dynamic size changes.
+
   <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/list.png?raw=true" width="400" />
 
 
@@ -180,7 +183,7 @@ for (int i=1; i<10; i++) {
 
 What happens when you want to add the 11th element? How does ArrayList become resizable?
 ```
-grades.add(10, 100);<br>
+grades.add(10, 100);
 ```
   <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist--3.png" width="700" />
 
@@ -233,7 +236,7 @@ The efficiency of common ArrayList operations:<br>
 
 #### LinkedList:
 
-The LinkedList class provides the functionality of the linked list data structure (use a doubly linked list to store the elements).
+The LinkedList class provides the functionality of the linked list data structure (use a doubly linked list to store the elements). <br>
   <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-1.png" width="700" />
 
 * contain duplicate elements.
@@ -250,7 +253,7 @@ The LinkedList class provides the functionality of the linked list data structur
   <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-2.png" width="700" />
 
 When we remove Data1:
-The Next pointer of data will be pointed to data2 Address and the prev pointer of data 2 will point address to Data.
+The Next pointer of data will be pointed to data2 Address and the prev pointer of data 2 will point address to Data. <br>
   <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-3.png" width="700" />
 
 - Queue(FIFO) First Input First output:

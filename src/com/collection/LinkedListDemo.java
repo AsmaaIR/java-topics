@@ -82,5 +82,6 @@ public class LinkedListDemo {
         namesDeque.removeLast();
         System.out.println("LinkedList after removeLast(): " + names);
 
+        System.out.println("LinkedList with pop " + namesDeque.pop());
     }
 }

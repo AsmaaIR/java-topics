@@ -1,4 +1,4 @@
-package com.collection;
+package com.collection.treeset;
 
 public class Product implements Comparable<Product> {
 

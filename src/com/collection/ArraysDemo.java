@@ -7,20 +7,20 @@ public class ArraysDemo {
 
         // Initialization, memory is allocated for 5 integers
         numbers = new int[5];
-
-        // you can declare and initialize at the same time
-        int[] numbers1 = new int[10]; //way1
-        int[] nums = {10, 20, 30, 40, 50}; //way2
-
-        System.out.println(numbers.length);
-        System.out.println(nums.length);
-
         numbers[0] = 10;
         numbers[1] = 20;
         numbers[2] = 30;
         numbers[3] = 40;
         numbers[4] = 50;
+        System.out.println(numbers.length);
 
+
+        // you can declare and initialize at the same time
+        int[] numbers1 = new int[10]; //way1
+        int[] nums = {10, 20, 30, 40, 50}; //way2
+
+        System.out.println(numbers1.length);
+        System.out.println(nums.length);
 
         // Modify an element
         nums[2]= 60;
