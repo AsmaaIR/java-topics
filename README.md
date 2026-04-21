@@ -26,7 +26,6 @@ This method becomes cumbersome, impractical and error-prone when dealing with a 
 * Each element is accessed by its numerical index.
 
   <img src="assets/enhanced/objects-tenElementArray.png" width="700" />
-  <img src="assets/enhanced/Arrays-3.png" width="600" />
 
 #### About arrays:
 1-Declaration and Initialization: 
