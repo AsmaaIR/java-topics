@@ -1,42 +1,58 @@
 package com.collection;
 
+import java.util.Arrays;
+
 public class ArraysDemo {
     public static void main(String[] args) {
-        // Declare an array of integers, Memory is not allocated for elements yet
-        int[] numbers;
+        System.out.println("=== Arrays demo ===");
 
-        // Initialization, memory is allocated for 5 integers
-        numbers = new int[5];
+        System.out.println("\n-- 1) Declaration vs initialization --");
+        int[] numbers; // declared (reference exists), elements not allocated yet
+
+        numbers = new int[5]; // initialized (5 ints allocated), default values are 0
+        System.out.println("numbers.length = " + numbers.length);
+        System.out.println("numbers defaults = " + Arrays.toString(numbers));
+
+        System.out.println("\n-- 2) Assign by index --");
         numbers[0] = 10;
         numbers[1] = 20;
         numbers[2] = 30;
         numbers[3] = 40;
         numbers[4] = 50;
-        System.out.println(numbers.length);
+        System.out.println("numbers = " + Arrays.toString(numbers));
 
+        System.out.println("\n-- 3) Inline initialization --");
+        int[] nums = {10, 20, 30, 40, 50};
+        System.out.println("nums = " + Arrays.toString(nums));
 
-        // you can declare and initialize at the same time
-        int[] numbers1 = new int[10]; //way1
-        int[] nums = {10, 20, 30, 40, 50}; //way2
+        System.out.println("\n-- 4) Read / write by index --");
+        System.out.println("nums[2] (before) = " + nums[2]);
+        nums[2] = 60;
+        System.out.println("nums[2] (after)  = " + nums[2]);
 
-        System.out.println(numbers1.length);
-        System.out.println(nums.length);
+        // numbers[5]=2; // will throw ArrayIndexOutOfBoundsException
 
-        // Modify an element
-        nums[2]= 60;
-        System.out.println(nums[2]);
-//        numbers[5]=2; // will throw ArrayIndexOutOfBoundsException
-
-
-       // Traversing an Array
-        // 1- Using a for loop to print all elements in the array
+        System.out.println("\n-- 5) Traversal --");
+        System.out.println("for-loop (index + value):");
         for (int i = 0; i < numbers.length; i++) {
-            System.out.println("Element at index " + i + ": " + numbers[i]);
+            System.out.println("index " + i + " -> " + numbers[i]);
         }
 
-        // Using an enhanced for-loop (for-each loop)
-        for (int number : numbers) {
-            System.out.println("Number: " + number);
+        System.out.println("enhanced for-loop (values only):");
+        for (int value : numbers) {
+            System.out.println("value -> " + value);
         }
+
+        System.out.println("\n-- 6) Common utilities (java.util.Arrays) --");
+        int[] copy = Arrays.copyOf(numbers, numbers.length);
+        System.out.println("copy = " + Arrays.toString(copy));
+
+        Arrays.sort(copy);
+        System.out.println("sorted copy = " + Arrays.toString(copy));
+
+        int indexOf40 = Arrays.binarySearch(copy, 40);
+        System.out.println("binarySearch(40) = " + indexOf40);
+
+        // Note: arrays are fixed-size. If you need resizing, prefer ArrayList.
     }
 }

@@ -25,7 +25,8 @@ This method becomes cumbersome, impractical and error-prone when dealing with a 
 * Each item in an array is called an element.
 * Each element is accessed by its numerical index.
 
-  <img src="https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif" width="600" />
+  <img src="assets/enhanced/objects-tenElementArray.png" width="700" />
+  <img src="assets/enhanced/Arrays-3.png" width="600" />
 
 #### About arrays:
 1-Declaration and Initialization: 
@@ -102,7 +103,7 @@ for (dataType element : arrayName) {
   ```
   This will create a variable in the stack and has value null by default.
 
-  <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Array-1.png" width="500" />
+  <img src="assets/enhanced/Array-1.png" width="500" />
 
 Ok, But Now what happen when we allocate memory:
 ```
@@ -111,7 +112,7 @@ Ok, But Now what happen when we allocate memory:
  This will allocate memory for 5 integers, Each one has its own address.
 As we said above these allocated memory units are contiguous, hence they will be spaced out by the same distance. 
 
-  <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Arrays-2.png" width="500" />
+  <img src="assets/enhanced/Arrays-2.png" width="500" />
 
 Now, what will happen if we store values by index.
 ```
@@ -120,7 +121,7 @@ MemoryAddressOfElement = BaseAddress + (Index*SizeOfElement)
 nums[0] = 50;   // 0*4 = 0 => 0+4000 = 4000
 num[4] = 60;  // 4*4 = 16 => 16+4000 = 4016
 ```
-  <img src="https://raw.githubusercontent.com/AsmaaIR/JavaCollections/master/assets/Arrays-3.png" width="500" />
+  <img src="assets/enhanced/Arrays-3.png" width="500" />
 
 ### Efficiency
 - Arrays provide efficient element access because the elements are stored contiguously in memory.
@@ -146,7 +147,7 @@ Arrays are best suited for scenarios where:</br>
 ## Collections:
 collections refer to a framework that provides a set of classes and interfaces to store, manage, and manipulate groups of objects. The Java Collections Framework includes various data structures, such as lists, sets, maps, queues, and more. These collections efficiently store, retrieve, and process data, making it easier to work with aggregate data and perform common operations like searching, sorting, and iteration.
 
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/Colections-hierarchy.png" width="800" />
+  <img src="assets/enhanced/Colections-hierarchy.png" width="800" />
 
 
 ### List Interface:
@@ -154,7 +155,7 @@ collections refer to a framework that provides a set of classes and interfaces t
 - The List interface extends the Collection interface and adds methods to manipulate and access elements based on their index.
 - Key features include ordered collection, allowing duplicates, and dynamic size changes.
 
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/list.png?raw=true" width="400" />
+  <img src="assets/enhanced/list.png" width="400" />
 
 
 #### ArrayList:
@@ -171,7 +172,7 @@ in Java 8: to save memory consumption and avoid immediate memory allocation make
 ArrayList<Integers> grades = new ArrayList<>();<br>
 grades.add(90);<br>
  
- <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist-1.png" width="700" />
+ <img src="assets/enhanced/arraylist-1.png" width="700" />
 
 -now we will add another 9 elements:
 ```
@@ -179,13 +180,13 @@ for (int i=1; i<10; i++) {
    grades.add(i+10);
  }
 ```
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist-2.png" width="700" />
+  <img src="assets/enhanced/arraylist-2.png" width="700" />
 
 What happens when you want to add the 11th element? How does ArrayList become resizable?
 ```
 grades.add(10, 100);
 ```
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/arraylist--3.png" width="700" />
+  <img src="assets/enhanced/arraylist--3.png" width="700" />
 
 When you try to add a new element to an ArrayList in Java that has reached its default capacity of 10, the ArrayList will automatically resize itself to accommodate the new element. </br>
 Here's how it works:</br>
@@ -237,7 +238,7 @@ The efficiency of common ArrayList operations:<br>
 #### LinkedList:
 
 The LinkedList class provides the functionality of the linked list data structure (use a doubly linked list to store the elements). <br>
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-1.png" width="700" />
+  <img src="assets/enhanced/linkedlist-1.png" width="700" />
 
 * contain duplicate elements.
 * maintains insertion order.
@@ -250,11 +251,11 @@ The LinkedList class provides the functionality of the linked list data structur
 - Next - stores an address of the next element in the list. It is null for the last element.
 - Data - stores the actual data.
 
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-2.png" width="700" />
+  <img src="assets/enhanced/linkedlist-2.png" width="700" />
 
 When we remove Data1:
 The Next pointer of data will be pointed to data2 Address and the prev pointer of data 2 will point address to Data. <br>
-  <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/linkedlist-3.png" width="700" />
+  <img src="assets/enhanced/linkedlist-3.png" width="700" />
 
 - Queue(FIFO) First Input First output:
   Enqueue - > add element to the end of the list.
@@ -423,7 +424,7 @@ the current head node.
 ### Set: 
 Set contains unique elements only.
  
- <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/set-1.png" width="600" />
+ <img src="assets/enhanced/set-1.png" width="600" />
                                                    
 #### HashSet: (Use HashTable for Storage)
 - Store Elements by using a mechanism called hashing.
@@ -460,7 +461,7 @@ Set contains unique elements only.
 -HashSet has default initial capacity of 16.
 -HashSet has default load factor of 0.75 or 75%.
 
- <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/set-2.png" width="700" />
+ <img src="assets/enhanced/set-2.png" width="700" />
 
 ###### HashSet Efficiency:
 - The efficiency of a `HashSet` in Java is primarily determined by its underlying implementation, which is based on a `HashMap`.
@@ -537,7 +538,7 @@ Nevertheless, if you require a set with preserved insertion order and efficient 
 ```
 
 ## Map:
- <img src="https://github.com/AsmaaIR/JavaCollections/blob/master/assets/map.png" width="600" />
+ <img src="assets/enhanced/map.png" width="600" />
 
 ```
         /*HashMap*/
@@ -667,3 +668,43 @@ Nevertheless, if you require a set with preserved insertion order and efficient 
 - You need to maintain a list of user comments on a blog post where duplicates are allowed and the order of insertion is preserved. Which Java collection would you use and why?
 
 - You need to implement a task scheduler where tasks are executed based on their priority. Which Java collection would you use, and what advantages does it offer for this scenario?
+
+---
+
+## Conclusion: when to choose what + complexity
+
+- **Array (`int[]`, `T[]`)**
+  - **Choose when**: fixed size, primitives, fastest index access, minimal overhead
+  - **Complexity**: index read \(O(1)\), search \(O(n)\), insert/delete middle \(O(n)\)
+
+- **ArrayList**
+  - **Choose when**: need a resizable list, lots of reads by index, mostly append
+  - **Complexity**: `get(i)` \(O(1)\), append amortized \(O(1)\), insert/delete middle \(O(n)\), `contains` \(O(n)\)
+
+- **LinkedList**
+  - **Choose when**: queue/deque behavior (`Queue`/`Deque`), frequent add/remove at ends
+  - **Complexity**: `get(i)` \(O(n)\), add/remove ends \(O(1)\), `contains` \(O(n)\)
+
+- **HashSet**
+  - **Choose when**: uniqueness + fast membership checks, order doesn’t matter
+  - **Complexity**: average `add/remove/contains` \(O(1)\), worst \(O(n)\)
+
+- **LinkedHashSet**
+  - **Choose when**: uniqueness + insertion order preserved
+  - **Complexity**: same as `HashSet` on average \(O(1)\) (with more memory overhead)
+
+- **TreeSet**
+  - **Choose when**: uniqueness + sorted order + range queries (`headSet`, `tailSet`)
+  - **Complexity**: `add/remove/contains` \(O(\log n)\)
+
+- **HashMap**
+  - **Choose when**: key→value lookup is primary, order doesn’t matter
+  - **Complexity**: average `put/get/remove/containsKey` \(O(1)\), worst \(O(n)\)
+
+- **LinkedHashMap**
+  - **Choose when**: map lookup + predictable iteration order (insertion order)
+  - **Complexity**: same as `HashMap` on average \(O(1)\)
+
+- **TreeMap**
+  - **Choose when**: sorted keys + range queries + “nearest key” operations (`floorKey`, `ceilingKey`)
+  - **Complexity**: `put/get/remove/containsKey` \(O(\log n)\)
